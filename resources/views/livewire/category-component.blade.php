@@ -26,7 +26,8 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Category Name</th>
+                <th>Category Name </th>
+                <th>Actions</th>
               </tr>
             </thead>
 
@@ -35,6 +36,15 @@
               <tr>
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
+                <td>
+                    <button  type="submit"
+                    
+                        wire:click="deleteCategory({{ $category->id }})" 
+                        class="btn btn-danger" 
+                        onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                        Eliminar Categoría
+                    </button>
+                </td>
               </tr>
               @endforeach
             </tbody>

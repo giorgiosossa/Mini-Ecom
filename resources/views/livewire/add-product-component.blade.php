@@ -36,5 +36,44 @@
 
         @endif
       </div>
+
+      <!-- categories table -->
+
+      <div class="com_card mx-2">
+        <h3 class="com_card_title mb-3">All products</h3>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($productos as $product)
+              <tr>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->title}}</td>
+               
+
+                <td>
+                    <button  type="submit"
+                    
+                        wire:click="deleteProduct({{ $product->id }})" 
+                        class="btn btn-danger" 
+                        onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                        Eliminar Categoría
+                    </button>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
 </div>
 

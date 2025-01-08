@@ -9,8 +9,10 @@ class CategoryComponent extends Component
 {
 
     public $name;
+    public $categoryId;
 
     public $categories;
+  
 
     public function mount()
 
@@ -35,6 +37,28 @@ class CategoryComponent extends Component
         session()->flash('message', 'Category added successfully!');
 
     }
+
+    public function delete(Category $categoryId){
+
+    }
+
+    public function deleteCategory($categoryId)
+    {
+        // Buscar la categoría por ID
+        $category = Category::find($categoryId);
+
+        // Si la categoría existe, eliminarla
+        if ($category) {
+            $category->delete();
+
+            // Emitir un mensaje de éxito a la vista
+            session()->flash('message', 'Categoría eliminada exitosamente!');
+        } else {
+            // Si no se encuentra, emitir un mensaje de error
+            session()->flash('message', 'Categoría no encontrada.');
+        }
+    }
+    
 
     public function render()
 
