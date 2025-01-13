@@ -15,6 +15,10 @@ class CartComponent extends Component
 
     public $total = 0;
 
+    public $name;
+    public $address;
+
+
     public function mount()
 
     {
@@ -64,6 +68,11 @@ class CartComponent extends Component
     public function confirmOrder()
 
 {
+     // Validación
+     $this->validate([
+        'name' => 'required|string|max:255',
+        'address' => 'required|string|max:255',
+        ]);
 
     if (empty($this->cart)) {
 
@@ -85,8 +94,6 @@ class CartComponent extends Component
 
             'product_id' => $productId,
 
-            'user_id' => Auth::id(),
-
             'quantity' => $item['quantity'],
 
             'price_per_item' => $item['price'],
@@ -94,6 +101,10 @@ class CartComponent extends Component
             'total_price' => $productTotal,
 
             'status' => 'pending',
+
+            'name' => $this->name,
+            
+            'address' => $this->address,
 
         ]);
 

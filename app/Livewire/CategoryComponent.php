@@ -38,9 +38,6 @@ class CategoryComponent extends Component
 
     }
 
-    public function delete(Category $categoryId){
-
-    }
 
     public function deleteCategory($categoryId)
     {

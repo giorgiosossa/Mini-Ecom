@@ -40,7 +40,7 @@ class OrderManagementComponent extends Component
 
         $order = Order::find($orderId);
 
-        $order->update(['status' => 'cancelled']);
+        $order->update(['status' => 'Realizado']);
 
         session()->flash('message', 'Order cancelled successfully!');
 

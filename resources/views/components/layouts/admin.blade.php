@@ -25,6 +25,8 @@
     <!-- Internal Files Linking -->
     <link rel="stylesheet" href="{{asset('theme_asset/dash/css/dashboard.css')}}" />
 
+    @vite(["resources/css/app.css"])
+
     <title>{{$title ?? "Mini-Ecom"}}</title>
     @livewireStyles
   </head>
@@ -37,7 +39,7 @@
         <div>
           <a class="site-name" href="{{route('admin.dashboard')}}">
             <div class="logo">
-              <img src="{{asset('theme_asset/dash/img/logo.png')}}" alt="" />
+              <img src="{{asset('theme_asset/dash/img/logo.jpg')}}" alt="" />
             </div>
           </a>
         </div>

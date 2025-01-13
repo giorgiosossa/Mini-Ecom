@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Livewire\Features\SupportFileUploads\WithFileUploads;
+use Livewire\WithFileUploads;
 use App\Models\Category;
 use App\Models\Product;
 
@@ -26,7 +26,7 @@ class AddProductComponent extends Component
 
     {
 
-        $path = $this->image->store('products', 'public');
+        $path = $this->image->store(path: 'products');
 
         Product::create([
 

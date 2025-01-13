@@ -38,7 +38,7 @@
       <div class="container">
         <div class="nav-bar">
           <a href="{{route('products.browse')}}" class="logo">
-            <img src="{{asset('theme_asset/home/img/logo.png')}}" alt="" />
+            <img src="{{asset('theme_asset/home/img/logo.jpg')}}" alt="" />
           </a>
 
           <div class="d-flex align-items-center">
@@ -75,24 +75,26 @@
             </div>
             @auth
               @if (Auth::user()->isAdmin())
-                <a href="{{route('admin.dashboard')}}">Cart</a>
+              
+                <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                <ul class="hover">
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger">
+                      Logout
+                    </button>
+                    
+                  </form>
+                  
+                </ul>
               @else
                 <a href="{{route('cart')}}">Cart</a>
               @endif
               
             @else
-              <a href="{{route('login')}}">login</a>
+              <a href="{{route('cart')}}">Cart</a>
             @endauth
-            <ul class="hover">
-              <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-outline-danger">
-                  Logout
-                </button>
-                
-              </form>
-              
-            </ul>
+           
           </div>
           <div class="nav-toggler">
             <i class="bx bx-menu-alt-right"></i>

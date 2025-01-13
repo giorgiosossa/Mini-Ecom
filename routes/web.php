@@ -40,11 +40,9 @@ Route::get('/product/{id}', SingleProductComponent::class)->name('product.show')
 
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category.show');
 
-Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function(){
 
     Route::get('/cart', CartComponent::class)->name('cart');
 
-});
 
 
 

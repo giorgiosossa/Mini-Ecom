@@ -66,7 +66,7 @@
                         wire:click="deleteProduct({{ $product->id }})" 
                         class="btn btn-danger" 
                         onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">
-                        Eliminar Categoría
+                        Eliminar Producto
                     </button>
                 </td>
               </tr>

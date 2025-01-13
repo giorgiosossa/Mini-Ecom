@@ -23,6 +23,10 @@ class Order extends Model
 
         'total_price',
 
+        'name',
+
+        'address'
+
     ];
 
     public function product()

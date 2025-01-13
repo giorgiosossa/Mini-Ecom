@@ -3,7 +3,9 @@
     @foreach ($products as $product)
     <div class="col-lg-4">
         <div class="product_card">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_img">
+          <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="product_img">
+
+            
 
         
           <div class="pc_content">
