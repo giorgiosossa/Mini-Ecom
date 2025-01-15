@@ -10,13 +10,13 @@
               <div class="col-lg-8">
                 <div class="pc_content">
                   <h2>{{ $product->title }}</h2>
-                  <p class="pcc_in">In <a href="{{route('category.show', $product->category->id)}}">{{ $product->category->name }}</a></p>
-                  <p class="pcc_price">Price: ${{ $product->price }}</p>
+                  <p class="pcc_in"> <a href="{{route('category.show', $product->category->id)}}">{{ $product->category->name }}</a></p>
+                  <p class="pcc_price">Precio: ${{ $product->price }} MXN</p>
   
                   <p class="pcc_description">{{ $product->description }}</p>
       
                   <div class="pcc_btns">
-                    <button wire:click="addToCart({{ $product->id }})" class="addtocart">Add To Cart</button>
+                    <button wire:click="addToCart({{ $product->id }})" class="addtocart">Agregar</button>
                   </div>
                   @if (session()->has('message'))
 

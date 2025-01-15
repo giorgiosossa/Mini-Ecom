@@ -14,8 +14,8 @@
             <p class="pcc_price">${{ $product->price }}</p>
 
             <div class="pcc_btns">
-                <button class="addtocart" wire:click="addToCart({{ $product->id }})">Add To Cart</button>
-                <a  class="viewbtn" href="{{ route('product.show', $product->id) }}" >View Details</a>
+                <button class="addtocart" wire:click="addToCart({{ $product->id }})">Comprar</button>
+                <a  class="viewbtn" href="{{ route('product.show', $product->id) }}" >Detalles</a>
               
             </div>
             

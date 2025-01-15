@@ -70,8 +70,8 @@
                                                 <td>${{ number_format($item['price'], 2) }}</td>
                                                 <td>
                                                     <input type="number" class="form-control form-control-sm" style="width: 70px;"
-                                                           wire:model.lazy="cart.{{ $productId }}.quantity" 
-                                                           min="1" wire:change="updateQuantity({{ $productId }}, cart.{{ $productId }}.quantity)">
+                                                    wire:model.lazy="cart.{{ $productId }}.quantity" 
+                                                    min="1" wire:change="updateQuantity({{ $productId }}, cart.{{ $productId }}.quantity)">
                                                 </td>
                                                 <td>${{ number_format($item['price'] * $item['quantity'], 2) }}</td>
                                                 <td>
@@ -106,9 +106,10 @@
                                         <p class="card-text">
                                             <strong>Precio:</strong> ${{ number_format($item['price'], 2) }}<br>
                                             <strong>Cantidad:</strong>
-                                            <input type="number" class="form-control form-control-sm d-inline-block" style="width: 70px;"
-                                                   wire:model.lazy="cart.{{ $productId }}.quantity" 
-                                                   min="1" wire:change="updateQuantity({{ $productId }}, cart.{{ $productId }}.quantity)">
+                                            <input type="number" class="form-control form-control-sm" style="width: 70px;"
+                                                    wire:model.lazy="cart.{{ $productId }}.quantity" 
+                                                    min="1" wire:change="updateQuantity({{ $productId }}, cart.{{ $productId }}.quantity)">
+
                                             <br>
                                             <strong>Total:</strong> ${{ number_format($item['price'] * $item['quantity'], 2) }}
                                         </p>

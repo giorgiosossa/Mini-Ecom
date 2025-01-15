@@ -57,23 +57,20 @@ class CartComponent extends Component
 
     }
 
-    public function updateQuantity($productId, $quantity)
-
+    public function updatedCart()
     {
-
-        if (isset($this->cart[$productId]) && $quantity > 0) {
-
-            $this->cart[$productId]['quantity'] = $quantity;
-
-            session()->put('cart', $this->cart);
-
-            $this->calculateTotal();
-
-            session()->flash('message', 'Cart updated successfully.');
-
-        }
-
+    $this->calculateTotal();
     }
+
+    public function updateQuantity($productId, $quantity)
+{
+    if (isset($this->cart[$productId]) && $quantity > 0) {
+        $this->cart[$productId]['quantity'] = $quantity;
+        session()->put('cart', $this->cart);
+        $this->calculateTotal(); // Asegúrate de recalcular el total
+        session()->flash('message', 'Cart updated successfully.');
+    }
+}
 
     public function confirmOrder()
 
@@ -147,7 +144,7 @@ class CartComponent extends Component
 
     $this->total = 0;
 
-    session()->flash('message', "Order placed successfully! Your total is $orderTotal. We will notify you once it is approved.");
+    session()->flash('message', "COMPRA LISTA! El total es de $$orderTotal MXN. Te enviaremos un mensaje de confirmación de tu pedido.");
 
 }
 
@@ -156,9 +153,7 @@ class CartComponent extends Component
     {
 
         $this->total = array_reduce($this->cart, function ($carry, $item) {
-
             return $carry + ($item['price'] * $item['quantity']);
-
         }, 0);
 
     }

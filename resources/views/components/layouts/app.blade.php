@@ -54,7 +54,7 @@
 
         <div class="navmenus">
           <div class="nav-links">
-            <a href="{{route('products.browse')}}">Home</a>
+            <a href="{{route('products.browse')}}">Inicio</a>
             <div class="dropdown">
               <a
                 href="#!"
@@ -62,7 +62,7 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                >Categories</a>
+                >Categorias</a>
                 @php
                   $categories = App\Models\Category::all();    
                 @endphp
@@ -76,7 +76,7 @@
             @auth
               @if (Auth::user()->isAdmin())
               
-                <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                <a href="{{route('admin.dashboard')}}">Administración</a>
                 <ul class="hover">
                   <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -88,11 +88,11 @@
                   
                 </ul>
               @else
-                <a href="{{route('cart')}}">Cart</a>
+                <a href="{{route('cart')}}">Carrito</a>
               @endif
               
             @else
-              <a href="{{route('cart')}}">Cart</a>
+              <a href="{{route('cart')}}">Carrito</a>
             @endauth
            
           </div>

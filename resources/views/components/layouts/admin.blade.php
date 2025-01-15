@@ -50,28 +50,28 @@
           <li class="hover">
             <a href="{{route('admin.dashboard')}}" class="">
               <i class="fas fa-house-damage"></i>
-              Overview
+              General
             </a>
           </li>
 
           <li class="hover">
             <a href="{{route('admin.categories')}}" class="">
               <i class="fa-solid fa-list-ul"></i>
-              Categories
+              Categorias
             </a>
           </li>
 
           <li class="hover">
             <a href="{{route('admin.add-product')}}" class="">
               <i class="fa-solid fa-plus"></i>
-              Product
+              Productos
             </a>
           </li>
 
           <li class="hover">
             <a href="{{route('admin.orders')}}" class="">
               <i class="fa-solid fa-cart-shopping"></i>
-              Order History
+              Ordenes de venta
             </a>
           </li>
 

@@ -4,7 +4,7 @@
         <i class="fa-solid fa-cart-shopping"></i>
         <div class="dashstat_content">
           <h3>{{ $totalOrders }}</h3>
-          <p>Total Orders</p>
+          <p>Total Ordenes</p>
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
         <i class="fa-solid fa-tag"></i>
         <div class="dashstat_content">
           <h3>{{ $totalProducts }}</h3>
-          <p>Total Products</p>
+          <p>Total Productos</p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
         <i class="fa-solid fa-list-ul"></i>
         <div class="dashstat_content">
           <h3>{{ $totalCategories }}</h3>
-          <p>Total Categories</p>
+          <p>Total Categorias</p>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
             <div class="navcard">
               <div class="nc_left">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <p>Check Order History</p>
+                <p>Ver historial de ventas</p>
               </div>
 
               <div class="nc_right">
@@ -51,7 +51,7 @@
             <div class="navcard">
               <div class="nc_left">
                 <i class="fa-solid fa-tag"></i>
-                <p>Add New Product</p>
+                <p>Añadir nuevo producto</p>
               </div>
 
               <div class="nc_right">

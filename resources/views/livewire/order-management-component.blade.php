@@ -8,13 +8,17 @@
               <table class="min-w-full divide-y divide-gray-200">
                   <thead class="bg-gray-50">
                       <tr>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                          
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Teléfono</th>
+
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dirección</th>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price Per Item</th>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Price</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hora</th>
+
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Producto</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
+                        
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio total</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                       </tr>
@@ -22,14 +26,17 @@
                   <tbody class="bg-white divide-y divide-gray-200">
                       @foreach ($orders as $order)
                           <tr class="hover:bg-gray-50 transition-colors duration-200">
-                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->id }}</td>
+                              
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->name }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->phone }}</td>
+
 
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->address }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->time }}</td>
+
 
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $order->product->title }}</td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $order->quantity }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${{ number_format($order->price_per_item, 2) }}</td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${{ number_format($order->total_price, 2) }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">
                                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
@@ -58,23 +65,25 @@
                   <div class="bg-white shadow-md rounded-lg overflow-hidden"> 
                       <div class="p-4 border-b">
                         <p class="text-sm text-gray-600   ">Order #{{ $order->id }}</p>
-                        <h4 class="text-lg font-semibold text-gray-800">A nombre de: {{ $order->name }}</h4>
-                          <h4 class="text-lg font-semibold text-gray-800">Para: {{ $order->address }}</h4>
+                        <h4 class="text-lg font-semibold text-gray-800">Teléfono: {{ $order->phone }}</h4>
+                        <p class="text-sm text-gray-600   ">A nombre de:{{ $order->name }}</p>
+
+                          <p class="text-sm text-gray-600 ">Para: {{ $order->address }}</p>
                           <p class="text-sm text-gray-600">{{ $order->product->title }}</p>
                           
                       </div>
                       <div class="p-4 space-y-2">
                           <div class="flex justify-between">
-                              <span class="text-sm text-gray-600">Quantity:</span>
+                              <span class="text-sm text-gray-600">Cantidad:</span>
                               <span class="text-sm font-medium text-gray-900">{{ $order->quantity }}</span>
                           </div>
                           <div class="flex justify-between">
-                              <span class="text-sm text-gray-600">Price Per Item:</span>
+                              <span class="text-sm text-gray-600">Precio por producto</span>
                               <span class="text-sm font-medium text-gray-900">${{ number_format($order->price_per_item, 2) }}</span>
                           </div>
                           <div class="flex justify-between">
-                              <span class="text-sm text-gray-600 bold">Total Price:</span>
-                              <span class="text-sm font-medium text-gray-900">${{ number_format($order->total_price, 2) }}</span>
+                              <h4 class="text-lg text-gray-600 bold">Precio total:</h4>
+                              <h4 class="text-lg font-medium text-gray-900">${{ number_format($order->total_price, 2) }}</h4>
                           </div>
                           
                       </div>

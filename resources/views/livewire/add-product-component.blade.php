@@ -1,15 +1,15 @@
 <div>
     <div class="com_card mx-2">
-        <h3 class="com_card_title mb-3">Add New Product</h3>
+        <h3 class="com_card_title mb-3">Agregar producto nuevo</h3>
 
         <form wire:submit.prevent="saveProduct">
-          <label for="title" class="form_label">Product Title</label>
+          <label for="title" class="form_label">Nombre del producto</label>
           <input type="text" wire:model="title" class="form-input" />
 
-          <label for="" class="form_label mt-2">Category</label>
+          <label for="" class="form_label mt-2">Categoria</label>
           <select wire:model="category_id" class="form-input">
 
-            <option value="">Select Category</option>
+            <option value="">Seleccionar Categoria</option>
 
                 @foreach ($categories as $category)
 
@@ -19,16 +19,16 @@
 
          </select>
 
-          <label for="description" class="form_label mt-2">Description</label>
+          <label for="description" class="form_label mt-2">Descripción</label>
           <textarea name=""  wire:model="description" class="form-input" id=""></textarea>
 
-          <label for="price" class="form_label mt-2">Price</label>
+          <label for="price" class="form_label mt-2">Precio</label>
           <input type="number" wire:model="price" class="form-input" />
 
-          <label for="image" class="form_label mt-2">Product Image</label>
+          <label for="image" class="form_label mt-2">Imagen del producto</label>
           <input type="file" wire:model="image" class="form-input" />
 
-          <button type="submit" class="btn-one mt-3">Add Product</button>
+          <button type="submit" class="btn-one mt-3">Añadir producto</button>
         </form>
         @if (session()->has('message'))
 
@@ -40,16 +40,16 @@
       <!-- categories table -->
 
       <div class="com_card mx-2">
-        <h3 class="com_card_title mb-3">All products</h3>
+        <h3 class="com_card_title mb-3">Todos mis productos</h3>
 
         <div class="table-responsive">
           <table class="data-table">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Title</th>
+                <th>Nombre</th>
                 
-                <th>Actions</th>
+                <th></th>
               </tr>
             </thead>
 
