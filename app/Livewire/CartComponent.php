@@ -16,7 +16,17 @@ class CartComponent extends Component
     public $total = 0;
 
     public $name;
+    public $time;
+    public $phone;
+
+
     public $address;
+    public $recibe_alguien_mas;
+    public $recibe_yo = false;
+    public $nombre_receptor = null;
+
+
+
 
 
     public function mount()
@@ -72,7 +82,19 @@ class CartComponent extends Component
      $this->validate([
         'name' => 'required|string|max:255',
         'address' => 'required|string|max:255',
+        'phone' => 'required',
+
+        
+        'time' => 'required|string|max:255',
+
+        
+
         ]);
+
+    if ($this->recibe_alguien_mas && empty($this->nombre_receptor)) {
+            session()->flash('error', 'Por favor, ingrese el nombre de la persona que recibirá el pedido.');
+            return;
+        }
 
     if (empty($this->cart)) {
 
@@ -90,6 +112,8 @@ class CartComponent extends Component
 
         $orderTotal += $productTotal;
 
+        $receptor = $this->recibe_yo ? $this->name : $this->nombre_receptor;
+
         Order::create([
 
             'product_id' => $productId,
@@ -102,9 +126,14 @@ class CartComponent extends Component
 
             'status' => 'pending',
 
+            'time' => $this->time,
+            'phone' => $this->phone,
+
+
             'name' => $this->name,
             
             'address' => $this->address,
+            'receptor' => $receptor,
 
         ]);
 
@@ -132,6 +161,21 @@ class CartComponent extends Component
 
         }, 0);
 
+    }
+
+    public function toggleReciboYo()
+    {
+        if ($this->recibe_yo) {
+            $this->recibe_alguien_mas = false;
+        }
+    }
+
+    // Al hacer clic en "Recibe alguien más", desmarcar "Recibo yo"
+    public function toggleRecibeAlguienMas()
+    {
+        if ($this->recibe_alguien_mas) {
+            $this->recibe_yo = false;
+        }
     }
 
     public function render()

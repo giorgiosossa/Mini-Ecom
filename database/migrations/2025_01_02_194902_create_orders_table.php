@@ -19,6 +19,9 @@ return new class extends Migration
             $table->decimal('price_per_item', 10, 2);
             $table->decimal('total_price', 10, 2);
             $table->string('name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('time')->nullable();
+            $table->string('receptor')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
         });

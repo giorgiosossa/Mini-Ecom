@@ -25,9 +25,16 @@ class Order extends Model
 
         'name',
 
-        'address'
+        'address',
+        'receptor',
+        'phone',
+        'time'
+
+        
 
     ];
+
+    
 
     public function product()
 
