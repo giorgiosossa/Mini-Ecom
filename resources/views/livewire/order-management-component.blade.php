@@ -12,7 +12,7 @@
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Teléfono</th>
 
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dirección</th>
+                          
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hora</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Recibe</th>
 
@@ -22,6 +22,7 @@
                         
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio total</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dirección</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acción</th>
                       </tr>
                   </thead>
@@ -32,8 +33,8 @@
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->name }}</td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->phone }}</td>
 
-
-                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->address }}</td>
+                              
+                              
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->time }}</td>
                             
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->receptor }}</td>
@@ -52,6 +53,13 @@
                                       {{ $order->status }}
                                   </span>
                               </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <button class="btn btn-primary text-white font-bold py-2 px-4 rounded transition duration-200 ease-in-out transform hover:scale-105">
+                                    
+                                    
+                                    <a href="{{$order->address}}"> Ubicación</a>
+                                </button>
+                                </td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                   
                                   <button wire:click="cancelOrder({{ $order->id }})" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-200 ease-in-out transform hover:scale-105">
@@ -69,12 +77,16 @@
               @foreach ($orders as $order)
                   <div class="bg-white shadow-md rounded-lg overflow-hidden"> 
                       <div class="p-4 border-b">
+                        <p class="text-sm text-gray-600   ">Fecha: {{ $order->created_at }}</p>
                         <p class="text-sm text-gray-600   ">Order #{{ $order->id }}</p>
+                        
+
                         <h4 class="text-lg font-semibold text-gray-800">Teléfono: {{ $order->phone }}</h4>
                         <p class="text-sm text-gray-600   ">A nombre de:{{ $order->name }}</p>
-
-                          <p class="text-sm text-gray-600 ">Para: {{ $order->address }}</p>
+                    
                           <p class="text-sm text-gray-600 ">Recibe: {{ $order->receptor }}</p>
+                          <p class="text-sm text-gray-600 ">A la hora: {{ $order->time }}</p>
+
 
                           <p class="text-sm text-gray-600">{{ $order->product->title }}</p>
                           
@@ -91,8 +103,13 @@
                           <div class="flex justify-between">
                               <h4 class="text-lg text-gray-600 bold">Precio total:</h4>
                               <h4 class="text-lg font-medium text-gray-900">${{ number_format($order->total_price, 2) }}</h4>
+                              
                           </div>
-                          
+                          <button class="btn btn-primary text-white font-bold py-2 px-4 rounded transition duration-200 ease-in-out transform hover:scale-105">
+                                    
+                                    
+                            <a href="{{$order->address}}"> Ubicación</a>
+                        </button>
                       </div>
                       
                   </div>
