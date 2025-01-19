@@ -24,9 +24,29 @@
                             <div class="mb-3">
                                 <input type="text" wire:model="name" class="form-control" placeholder="Nombre">
                             </div>
-                            <div class="mb-3">
-                                <input type="text" wire:model="address" class="form-control" placeholder="Dirección">
-                            </div>
+                             <!-- Ubicación -->
+                        <div class="mb-3">
+                            <input type="text" wire:model="address" class="form-control" placeholder="Ubicación" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="button" id="obtener-ubicacion" class="btn btn-primary">Obtener mi ubicación</button>
+                        </div>
+                        @if (!empty($address))
+                        <div class="mb-3" id="map">
+                            <iframe 
+                            width="100%" 
+                            height="300px" 
+                            frameborder="0" 
+                            style="border:0" 
+                            src="{{$address}}&output=embed" 
+                            allowfullscreen>
+                          </iframe>
+                        </div>
+                        @endif
+                        
+
+
                             <div class="mb-3">
                                 <input type="text" wire:model="phone" class="form-control" placeholder="Teléfono">
                             </div>
@@ -97,6 +117,10 @@
                             </div>
                         </div>
 
+
+
+                       
+
                         <!-- Vista móvil -->
                         <div class="d-lg-none">
                             @foreach ($cart as $productId => $item)
@@ -137,3 +161,30 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('obtener-ubicacion').addEventListener('click', function () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+  
+            // Generar enlace público de Google Maps
+            const googleMapsLink = `https://www.google.com/maps?q=${lat},${lng}&z=15`;
+  
+            // Enviar el enlace al componente Livewire
+            @this.set('address', googleMapsLink);
+  
+            
+          },
+          function (error) {
+            alert('La ubicación es obligatoria. Por favor, habilita el acceso a tu ubicación: ' + error.message);
+          }
+        );
+      } else {
+        alert('Geolocalización no soportada por este navegador.');
+      }
+    });
+  </script>
+  
