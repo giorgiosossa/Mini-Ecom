@@ -14,13 +14,15 @@
 
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dirección</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hora</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Recibe</th>
+
 
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Producto</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
                         
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio total</th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acción</th>
                       </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
@@ -33,6 +35,9 @@
 
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->address }}</td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->time }}</td>
+                            
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $order->receptor }}</td>
+
 
 
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $order->product->title }}</td>
@@ -69,6 +74,8 @@
                         <p class="text-sm text-gray-600   ">A nombre de:{{ $order->name }}</p>
 
                           <p class="text-sm text-gray-600 ">Para: {{ $order->address }}</p>
+                          <p class="text-sm text-gray-600 ">Recibe: {{ $order->receptor }}</p>
+
                           <p class="text-sm text-gray-600">{{ $order->product->title }}</p>
                           
                       </div>
