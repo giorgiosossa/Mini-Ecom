@@ -103,15 +103,15 @@ button.btn-one {
   text-align: center;
   font-weight: 500;
   transition: all 0.5s ease;
-  background-color: #ff7f28;
+  background-color: #2dbdb5;
   color: #ffffff !important;
   font-weight: bold;
   border: 2px solid transparent;
 }
 
 .btn-one:hover {
-  border-color: #f56e14;
-  background-color: #f56e15;
+  border-color: #2dbdb5;
+  background-color: #2dbdb5;
   color: #fff !important;
 }
 
@@ -209,7 +209,7 @@ button.btn-one {
 .menu-wrap .insideScroll li a.active,
 .menu-wrap .insideScroll li.hover:hover {
   color: #ffffff;
-  background: #ff7f28;
+  background: #2dbdb5;
 }
 
 .menu-wrap .insideScroll li:first-child {
@@ -290,7 +290,7 @@ button.btn-one {
 
 .sub-btn {
   cursor: pointer;
-  background: #ff7f28;
+  background: #2dbdb5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -317,7 +317,7 @@ button.btn-one {
 
 .sub-menu {
   display: none;
-  background-color: #f3aa0d;
+  background-color: #2dbdb5;
 }
 
 .sub-btn-two {
@@ -348,7 +348,7 @@ button.btn-one {
 
 .sub-menu-two {
   display: none;
-  background-color: #ff7f28;
+  background-color: #2dbdb5;
 }
 
 .sub-menu-two > a {
@@ -441,7 +441,7 @@ button.btn-one {
 
 .data-table thead {
   color: #fff;
-  background: #ff7f28;
+  background: #2dbdb5;
 }
 
 .data-table th:first-child,
@@ -466,7 +466,7 @@ button.btn-one {
 
 .tab_section {
   background: var(--card-bg);
-  border: 1px solid #ff7f28;
+  border: 1px solid #2dbdb5;
   border-radius: 12px;
   padding: 20px 30px;
   margin-bottom: 20px;
@@ -474,14 +474,14 @@ button.btn-one {
 
 .nav-pills .nav-link {
   border-radius: var(--bs-nav-pills-border-radius);
-  background: #ff7f28;
+  background: #2dbdb5;
   margin: 2px;
   color: #ffffff;
   font-weight: bold;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background-color: #f36d15;
+  background-color: #2dbdb5;
 }
 
 ::-webkit-scrollbar {

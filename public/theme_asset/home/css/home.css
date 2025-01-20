@@ -131,7 +131,7 @@ ul {
 }
 
 .theme-icon-wrap i {
-  color: #ff7f28;
+  color: #2dbdb5;
   position: absolute;
 }
 
@@ -206,7 +206,7 @@ ul {
     flex-direction: column;
     transition: all 0.4s ease;
     backdrop-filter: blur(8px);
-    background: hsl(28.9deg 78.22% 52.51% / 75%);
+    background: #2dbdb5;
   }
 
   .nav-links a {
@@ -275,7 +275,7 @@ ul {
 
 .pcc_in a{
   font-weight: bold;
-  color: rgb(243, 80, 21);
+  color: #2dbdb5;
 }
 
 .pcc_price {
@@ -298,7 +298,7 @@ ul {
 }
 
 .addtocart {
-  background-color: rgb(243, 80, 21);
+  background-color: #2dbdb5;
   outline: none;
   color: #fff;
   padding: 10px 20px;

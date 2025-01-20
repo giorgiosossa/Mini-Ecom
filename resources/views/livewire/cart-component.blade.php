@@ -51,7 +51,7 @@
                                 <input type="text" wire:model="phone" class="form-control" placeholder="Teléfono">
                             </div>
                             <div class="mb-3">
-                                <input type="text" wire:model="time" class="form-control" placeholder="Horario de entrega">
+                                <input type="text" wire:model="time" class="form-control" placeholder="Día y hora de entrega">
                             </div>
 
                             <div class="mb-3">
@@ -66,7 +66,7 @@
                             </div>
 
                             <div class="mb-3" x-show="$wire.recibe_alguien_mas">
-                                <input type="text" wire:model="nombre_receptor" class="form-control" placeholder="Nombre de quien recibe">
+                                <input type="text" wire:model="nombre_receptor" class="form-control" placeholder="Nombre y teléfono de quien recibe">
                             </div>
                         </form>
 

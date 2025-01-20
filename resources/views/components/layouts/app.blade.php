@@ -80,7 +80,7 @@
                 <ul class="hover">
                   <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-outline-danger">
+                    <button type="submit" class="btn btn-outline-primary">
                       Logout
                     </button>
                     
