@@ -39,7 +39,7 @@
         <div>
           <a class="site-name" href="{{route('admin.dashboard')}}">
             <div class="logo">
-              <img src="{{asset('theme_asset/dash/img/logo.jpg')}}" alt="" />
+              <img src="{{asset('theme_asset/dash/img/logo.png')}}" alt="" />
             </div>
           </a>
         </div>

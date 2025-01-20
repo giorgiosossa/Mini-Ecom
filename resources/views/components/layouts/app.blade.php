@@ -36,9 +36,9 @@
     <!-- header -->
     <div id="header">
       <div class="container">
-        <div class="nav-bar">
+        <div class="nav-bar pt-5">
           <a href="{{route('products.browse')}}" class="logo">
-            <img src="{{asset('theme_asset/home/img/logo.jpg')}}" alt="" />
+            <img src="{{asset('theme_asset/home/img/logo.png')}}" alt="" />
           </a>
 
           <div class="d-flex align-items-center">
@@ -52,7 +52,7 @@
           </div>
         </div>
 
-        <div class="navmenus">
+        <div class="navmenus pt-5">
           <div class="nav-links">
             <a href="{{route('products.browse')}}">Inicio</a>
             <div class="dropdown">
